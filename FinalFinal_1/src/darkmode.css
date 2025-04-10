@@ -1,0 +1,165 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 6, 2023, 12:45:48 AM
+    Author     : ngmen
+ ghostwhite
+*/
+.root{
+    -fx-background-color:black;
+    -fx-border-color:white;
+    -fx-border-width:5;
+}
+.pane{
+    -fx-background-color:transparent;
+    -fx-border-color:white;
+    -fx-border-with:2;
+}
+
+.label{
+    -fx-text-fill:white;
+}
+
+#hbox-controls{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:white;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:white;
+
+}
+#vbox-planets{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:white;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:white;
+
+}
+#button-shoot{
+    -fx-background-radius:100;
+    -fx-background-color:red;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-light{
+    -fx-background-color: grey;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-dark{
+    -fx-background-color: blue;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-menu{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-exit{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-settings{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-play{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-about{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-return{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+
+.root{
+    -fx-background-color:black;
+    -fx-border-color:white;
+    -fx-border-width:5;
+}
+.pane{
+    -fx-background-color:transparent;
+    -fx-border-color:white;
+    -fx-border-with:2;
+}
+
+.label{
+    -fx-text-fill:white;
+}
+
+#hbox-controls{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:white;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:white;
+
+}
+#vbox-planets{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:white;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:white;
+
+}
+#button-shoot{
+    -fx-background-radius:100;
+    -fx-background-color:red;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+    -fx-text-fill:white;
+
+}
+#button-light{
+    -fx-background-color: grey;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-dark{
+    -fx-background-color: blue;
+    -fx-background-radius:100;
+    -fx-border-color:white;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+
+
+

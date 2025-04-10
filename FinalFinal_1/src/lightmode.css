@@ -1,0 +1,107 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 7, 2023, 1:59:05 PM
+    Author     : ngmen
+*/
+.root{
+    -fx-background-color:ghostwhite;
+    -fx-border-color:black;
+    -fx-border-width:5;
+}
+.pane{
+    -fx-background-color:transparent;
+    -fx-border-color:black;
+    -fx-border-with:2;
+}
+
+.label{
+    -fx-text-fill:black;
+}
+
+#hbox-controls{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:black;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:black;
+
+}
+#vbox-planets{
+    -fx-background-color: dodgerblue;
+    -fx-background-radius:20;
+    -fx-border-color:black;
+    -fx-border-radius:20;
+    -fx-border-width:4;
+    -fx-text-fill:black;
+
+}
+#button-shoot{
+    -fx-background-radius:100;
+    -fx-background-color:red;
+    -fx-border-color:black;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+    -fx-text-fill:black;
+}
+#button-light{
+    -fx-background-color: blue;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-dark{
+    -fx-background-color: grey;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:4;
+    -fx-border-radius:100;
+}
+#button-menu{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+#button-exit{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+#button-play{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+#button-about{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+#button-return{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+#button-settings{
+    -fx-background-color: whitesmoke;
+    -fx-background-radius:100;
+    -fx-border-color:black;
+    -fx-border-width:2;
+    -fx-border-radius:100;
+}
+
+

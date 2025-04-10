@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+   <children>
+      <Button id="button-shoot" fx:id="shootButton" layoutX="413.0" layoutY="333.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="96.0" text="SHOOT!" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="12.0" />
+         </font></Button>
+      <Pane fx:id="mainPane" layoutX="16.0" layoutY="66.0" prefHeight="231.0" prefWidth="500.0">
+         <children>
+            <Rectangle fx:id="dummyObj" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="24.0" layoutX="31.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="30.0" />
+            <ImageView fx:id="imageBackground" fitHeight="230.0" fitWidth="500.0" layoutY="1.0">
+               <image>
+                  <Image url="@image/CGF_STILL_00032.0.jpg" />
+               </image>
+            </ImageView>
+            <Circle fx:id="projectile" fill="#ff1f1f" layoutX="25.0" layoutY="195.0" radius="9.0" stroke="BLACK" />
+            <Rectangle fx:id="rec1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="9.0" layoutX="305.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" width="36.0" />
+            <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="12.0" layoutX="372.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+            <Rectangle fx:id="rec3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" layoutX="427.0" layoutY="131.0" stroke="BLACK" strokeType="INSIDE" width="39.0" />
+            <ImageView fx:id="canonBase" fitHeight="33.0" fitWidth="104.0" layoutX="8.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/28v2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="35.0" layoutX="8.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/32.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="explosionAnimation" fitHeight="88.0" fitWidth="66.0" layoutX="192.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="12.0" fitWidth="48.0" layoutX="1.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/10.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="rhythmCircle" layoutX="262.0" layoutY="109.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" visible="false">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color blue="1.0" green="1.0" red="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+         </children></Pane>
+      <Label fx:id="mainLabel" layoutX="210.0" layoutY="11.0" prefHeight="48.0" prefWidth="199.0" text="Tardieu's Adventure" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="16.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color blue="0.6064814925193787" green="0.6064814925193787" red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.3684210479259491" green="0.3684210479259491" red="0.3684210479259491" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <VBox id="hbox-controls" fx:id="controlsVBox" layoutX="41.0" layoutY="338.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+         <children>
+            <HBox prefHeight="27.0" prefWidth="309.0" spacing="5.0">
+               <children>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Angle">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="angleTextField" alignment="CENTER" editable="false" prefHeight="19.0" prefWidth="81.0">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="10.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="9.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Slider fx:id="angleSlider" blockIncrement="90.0" majorTickUnit="45.0" max="90.0" minorTickCount="5" showTickLabels="true" value="45.0">
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
+                  </Slider>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox prefHeight="14.0" prefWidth="298.0" spacing="5.0">
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="G - FORCE">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="gForceTextField" editable="false" prefHeight="22.0" prefWidth="163.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="15.0" prefWidth="309.0" spacing="10.0">
+               <children>
+                  <Label text="Size of Projectile">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="beachBallButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="44.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="beachImage" fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@image/image_processing20200908-32184-1m7an5b.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="rockButton" mnemonicParsing="false" prefHeight="34.0" prefWidth="45.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="rockImage" fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@image/harvestable-resources-rock.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="bowlingBallButton" mnemonicParsing="false" prefHeight="24.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fx:id="bowlingImage" fitHeight="30.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@image/R.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="20.0" prefWidth="309.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="108.0" text="Initial Speed">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="speedText" editable="false" prefHeight="25.0" prefWidth="107.0">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font></TextField>
+                  <Slider fx:id="speedSlider" blockIncrement="0.5" max="5.0" showTickLabels="true" value="2.5" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox id="vbox-planets" fx:id="planetsVbox" layoutX="580.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+         <children>
+            <Button id="button-menu" fx:id="menuButton" mnemonicParsing="false" onAction="#changeToMenu" text="MENU">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label prefHeight="19.0" prefWidth="69.0" text="Planets">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Label>
+            <Button fx:id="saturnButton" mnemonicParsing="false" style="-fx-background-color: blue;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@image/78-784583_planet-icon-free-download-cute-saturn-planet-transparent.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="SATURN">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Button fx:id="earthButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@image/c156b4270aea292b9b335dd463ea17eb-earth-planet-icon-earth-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="EARTH" textAlignment="CENTER">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Button fx:id="marsButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@image/124582.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="MARS">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+            <Button fx:id="moonButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@image/5729617.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label text="MOON">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="8.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="customButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fx:id="customPlanetImage" fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@image/1945947.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="CUSTOM">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets right="2.0" />
+               </padding></Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Label fx:id="pointsLabel" layoutX="22.0" layoutY="29.0" text="TOTAL POINTS: ">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="pointsTextField" layoutX="128.0" layoutY="27.0" prefHeight="25.0" prefWidth="54.0">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="12.0" />
+         </font>
+      </TextField>
+      <HBox fx:id="modeHbox" layoutX="405.0" layoutY="447.0" prefHeight="48.0" prefWidth="116.0" spacing="10.0">
+         <children>
+            <Button id="button-light" fx:id="lightModeButton" mnemonicParsing="false" prefWidth="4.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@image/R%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="button-dark" fx:id="darkModeButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@image/R%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fx:id="imageRhythm" fitHeight="581.0" fitWidth="736.0" layoutX="-13.0" layoutY="-18.0" mouseTransparent="true" pickOnBounds="true">
+         <image>
+            <Image url="@image/1024px-Vignette_(SuperTux).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="menuBackground" fitHeight="845.0" fitWidth="1517.0" layoutX="-362.0" layoutY="-206.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/menugif.gif" />
+         </image>
+      </ImageView>
+      <Circle fx:id="rhythmCircle" layoutX="358.0" layoutY="261.0" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5254902243614197" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill></Circle>
+      <Text fx:id="logo" fill="#037bff" layoutX="255.0" layoutY="243.0" lineSpacing="6.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Tardieu's Adventure" textAlignment="CENTER" wrappingWidth="209.0">
+         <font>
+            <Font name="Bauhaus 93" size="44.0" />
+         </font>
+      </Text>
+      <Text fx:id="introText" fill="#e4e4e4" layoutX="240.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click anywhere to start">
+         <font>
+            <Font size="23.0" />
+         </font>
+         <effect>
+            <Glow level="0.45" />
+         </effect>
+      </Text>
+      <Rectangle fx:id="clickableMenu" fill="DODGERBLUE" height="558.0" layoutX="1.0" layoutY="6.0" onMouseClicked="#menuClick" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="717.0" />
+      <ImageView fx:id="settings" fitHeight="25.0" fitWidth="30.0" layoutX="676.0" layoutY="15.0" onMouseClicked="#settingsClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/gear.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.94" contrast="0.4" hue="0.49" />
+         </effect>
+      </ImageView>
+      <Rectangle fx:id="settingsBackgroundColor" fill="#050721" height="558.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="719.0" />
+      <ImageView fx:id="backgroundImage" fitHeight="582.0" fitWidth="464.0" layoutX="123.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@image/4b2ab5f41b383533644a9d0f49a0afc8.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="aboutButton" layoutX="123.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#letsAbout" prefHeight="35.0" prefWidth="133.0" text="ABOUT" visible="false">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.76" specularConstant="0.53" surfaceScale="1.61">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color blue="1.0" green="0.9833333492279053" />
+                     </color></Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="returnButton" layoutX="455.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#letsReturn" prefHeight="35.0" prefWidth="133.0" text="RETURN" visible="false">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.76" specularConstant="0.53" surfaceScale="1.61">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color blue="1.0" green="0.9833333492279053" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <TextArea fx:id="creatorsTextArea" layoutX="180.0" layoutY="275.0" opacity="0.99" prefHeight="163.0" prefWidth="359.0" text="Creators:&#10;Noé Gabriel Menacho Tardieu&#10;Marco Salkica&#10;Anish Mehra&#10;&#10;Version: Tardieu's Adventure  2.0&#10;" visible="false">
+         <effect>
+            <Lighting diffuseConstant="1.48" specularConstant="2.0" specularExponent="0.0" surfaceScale="1.39">
+               <bumpInput>
+                  <SepiaTone />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color blue="0.7686274647712708" green="0.47058823704719543" red="0.4470588266849518" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font></TextArea>
+      <Text fx:id="volumeSliderLabel" fill="WHITE" layoutX="108.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume:" visible="false">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+      <Slider fx:id="volumeSlider" blockIncrement="0.1" layoutX="213.0" layoutY="119.0" majorTickUnit="0.1" max="1.0" minorTickCount="0" prefHeight="14.0" prefWidth="318.0" value="0.5" visible="false">
+         <effect>
+            <Glow level="1.0" />
+         </effect></Slider>
+      <Button fx:id="exitButton" layoutX="516.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#letsExit" prefHeight="32.0" prefWidth="105.0" text="EXIT" visible="false">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="RED" />
+               </light>
+            </Lighting>
+         </effect></Button>
+      <Rectangle fx:id="blackScreen" height="564.0" layoutX="-4.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="719.0" />
+      <Text fx:id="studioName" fill="WHITE" layoutX="223.0" layoutY="276.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tardieu Studios" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="37.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Text>
+   </children>
+</AnchorPane>
